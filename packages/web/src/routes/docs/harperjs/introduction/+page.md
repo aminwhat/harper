@@ -30,6 +30,7 @@ let harper = require("harper.js");
 async function main() {
   // We cannot use `WorkerLinter` on Node.js since it relies on web-specific APIs.
   let linter = new harper.LocalLinter();
+  linter.setup();
 
   let lints = await linter.lint("This is a example of how to use `harper.js`.");
 
